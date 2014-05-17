@@ -17,4 +17,5 @@ public interface Queue <T> {
     T getRearElement( );
     void put ( T theObject );
     T remove ( );
+    
 }
