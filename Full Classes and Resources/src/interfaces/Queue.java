@@ -9,6 +9,7 @@ package interfaces;
 /**
  *
  * @author CIRO
+ * @param <T>
  */
 public interface Queue <T> {
     
