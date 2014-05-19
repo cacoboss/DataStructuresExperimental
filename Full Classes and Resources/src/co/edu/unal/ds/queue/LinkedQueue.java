@@ -40,7 +40,7 @@ public class LinkedQueue <T> implements Queue<T> {
      */
     @Override
     public T getFrontElement() {
-        return isEmpty( ) ? null : front.getElement();
+        return isEmpty( ) ? null : front.element;
     }
 
     /** @return the element at the rear of the Queue
@@ -48,7 +48,7 @@ public class LinkedQueue <T> implements Queue<T> {
      */
     @Override
     public T getRearElement() {
-        return isEmpty( ) ? null : rear.getElement();
+        return isEmpty( ) ? null : rear.element;
     }
 
     /** insert theObject at the end of the Queue
@@ -63,7 +63,7 @@ public class LinkedQueue <T> implements Queue<T> {
         }
         else {
             //non-Empty Queue
-            rear.setNext( p );
+            rear.next = p;
         }
         
         //Updating rear reference
@@ -79,8 +79,8 @@ public class LinkedQueue <T> implements Queue<T> {
         if( isEmpty( ) ){
             return null;
         }
-        T frontElement = front.getElement( );
-        front = front.getNext( );
+        T frontElement = front.element;
+        front = front.next;
         if( isEmpty( ) ){
             //enable garbage collection
             rear = null;

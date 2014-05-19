@@ -14,8 +14,8 @@ package co.edu.unal.ds.chain;
 public class ChainNode <T>  {
     
     //Fields
-    T element;
-    ChainNode<T> next;
+    public T element;
+    public ChainNode<T> next;
     
     //Constructors
     public ChainNode( ){
@@ -28,38 +28,5 @@ public class ChainNode <T>  {
         this.element = element;
         this.next = next;
     }
-    
-    //Getters
-
-    /**
-     * @return the element
-     */
-    public T getElement() {
-        return element;
-    }
-
-    /**
-     * @return the next
-     */
-    public ChainNode<T> getNext() {
-        return next;
-    }
-
-    //Setters
-    
-    /**
-     * @param element the element to set
-     */
-    public void setElement(T element) {
-        this.element = element;
-    }
-
-    /**
-     * @param next the next to set
-     */
-    public void setNext(ChainNode<T> next) {
-        this.next = next;
-    }
-    
     
 }
