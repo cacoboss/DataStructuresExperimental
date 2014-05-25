@@ -10,5 +10,5 @@
 	 boolean isEmpty( );
 	 T peek( );
 	 void push( T theObject );
-	 T popoo( );
+	 T pop( );
  }
