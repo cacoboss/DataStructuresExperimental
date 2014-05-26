@@ -14,16 +14,19 @@ public class Teleport {
     
     //Fields
     public boolean state;
-    public DoubleCoordinate position;
+    
+    public Coordinate positionIn;
+    public Coordinate positionOut;
+    
     
     //Constructors
-    
     public Teleport(){
-        
+        this( new Coordinate(), new Coordinate(), false );
     }
     
-    public Teleport( DoubleCoordinate coordinate, boolean state ){
-        position = coordinate;
-        state = true;
+    public Teleport(Coordinate coordinateIn, Coordinate coordinateOut , boolean state ){
+        positionIn = coordinateIn;
+        positionOut = coordinateOut;
+        this.state = state;
     }
 }
