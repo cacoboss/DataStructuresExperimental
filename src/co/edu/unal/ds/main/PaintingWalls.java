@@ -65,9 +65,9 @@ public class PaintingWalls {
         
         //Initialing External Corridor   ///****///
         for(int i = 0; i < rowSize + 4; i++){
-            //Creating External wall of ****
-            maze[ i ][ 0 ] = '*';
-            maze[ i ][ rowSize + 3 ] = '*';
+            //Creating External wall of ++++
+            maze[ i ][ 0 ] = '+';
+            maze[ i ][ rowSize + 3 ] = '+';
         }
         for(int i = 0; i < rowSize + 4; i++){
             //Creating Internal wall of ....
@@ -75,9 +75,9 @@ public class PaintingWalls {
             maze[ i ][ rowSize + 2 ] = '.';
         }
         for(int i = 1; i < colSize + 3; i++){
-            //Creating External wall of ****
-            maze[ 0 ][ i ] = '*';
-            maze[ colSize + 3 ][ i ] = '*';
+            //Creating External wall of ++++
+            maze[ 0 ][ i ] = '+';
+            maze[ colSize + 3 ][ i ] = '+';
         }
         for(int i = 1; i < colSize + 3; i++){
             //Creating Internal wall of ....
@@ -108,7 +108,7 @@ public class PaintingWalls {
                     System.out.println("Punto inicio Row:" + here.row + " y Col:" + here.col);
                     do{ //Find Walls for painting
                         maze[here.row][here.col] = '*'; //Position already checked
-                        for(int aux = 0; aux < 3 ; aux++){
+                        for(int aux = 0; aux < 4 ; aux++){
                             //Check all neighbors
                             nbr.row = (here.row + offsets[aux].row);
                             nbr.col = (here.col + offsets[aux].col);
@@ -120,25 +120,23 @@ public class PaintingWalls {
                                 if(maze[ nbr.row ][ nbr.col ] == '.')
                                     queuePaint.put(new Position(nbr.row,nbr.col));
                             }
-                            
-                            //Revisando que funcione
-                            for(int aux1 = 0; aux1 < rowSize + 4; aux1++){
-                                for(int aux2 = 0; aux2 < colSize + 4; aux2++){
-                                    System.out.print(maze[aux1][aux2]);
-                                }
-                                System.out.println();
-                            }
-                            System.out.println();
-                            
                         }
                         //Unexplored Path
                         here = queuePaint.remove();
+                        //Revisando que funcione
+                        for(int aux1 = 0; aux1 < rowSize + 4; aux1++){
+                            for(int aux2 = 0; aux2 < colSize + 4; aux2++){
+                                System.out.print(maze[aux1][aux2]);
+                            }
+                            System.out.println();
+                        }
+                        System.out.println();
                     }
                     while( here != null );
                 }
             }
         }
-        System.out.println("Total amount of paint used: " + littersOfPaint);
+        System.out.println("Total amount of paint used: " + littersOfPaint + "litters " );
     }
     
 }
